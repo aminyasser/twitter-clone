@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ profile.php?username=$1 [QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^status/([0-9_-]+)/?$ status.php?post_id=$1 [QSA]
+
+
+
+
+
+
+
+

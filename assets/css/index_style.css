@@ -1,0 +1,245 @@
+body{
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: white;
+}
+.twt-main{
+	height: 100%;
+	width: 100%;
+}
+.twt-login{
+	display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+	background-color: white;
+	float: right;
+}
+
+.twitterIcon-bird{
+	position: absolute;
+	width: 1200px;
+	top: -145px;
+	left: 15px;
+    overflow: hidden;
+}
+.login-box{
+	margin-left: 60px;
+	margin-top: 31px;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr auto;
+	font-size: 14px;
+	line-height: 20px;
+	width: 210px;
+	height: 46px;
+	grid-column-gap: 10px;
+}
+.input-box{
+	border: 1px solid #e6ecf0;
+	border-radius: 3px;
+	box-sizing: border-box;
+	padding: 15px;
+    width: 210px;
+}
+.input-box:focus {
+	outline: none;
+}
+::placeholder{
+	font-size: 14px;
+	line-height: 20px;
+}
+.login-btn{
+	background-color: #fff;
+    border: 1px solid #1da1f2;
+	color: #1da1f2;
+	border-radius: 80px;
+	font-weight: 700;
+	font-size: 14px;
+    width: 70px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+.login-btn:hover {
+	background-color: #1DA1F225;
+    transition: all 0.2s;
+}
+
+.login-link{
+	grid-area: 2/2/3/3;
+	color: #aab8c2;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.slow-login{
+	justify-self: center;
+	width: 355px;
+	height: 100px;
+	color: #14171a;
+	font-weight: 700;
+}
+.login-bird{
+	width: 60px;
+	display: block;
+}
+.login-small-display{
+	display:none; 
+}
+.front-para{
+	font-size: 27px;
+	line-height: 32px;
+	display: block;
+	margin-bottom: 50px;
+}
+.join{
+	font-size: 18px;
+	line-height: 24px
+}
+.signup-btn{
+	margin-top: 15px;
+	background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+	color: #fff;
+}
+.signin-btn{
+	background-color: #fff;
+    border: 1px solid #1da1f2;
+	color: #1da1f2;
+}
+
+.pri-btn{
+	border-radius: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 16px;
+	margin-bottom: 16px;
+	width: 350px;
+}
+.twt-features{
+	background: url('https://logos-download.com/wp-content/uploads/2016/02/Twitter_logo_bird_transparent_png.png');
+	background-repeat: no-repeat;
+	background-size:1200px;
+	background-position:0px -140px;
+	width: 50%;
+	height: 100vh;
+	background-color: #1da1f2;
+	float: left;
+}
+.features-div{
+	margin:auto;
+	width: 370px;
+	margin-top: 230px;
+}
+.twt-icon{
+	position: relative;
+	float: left;
+	width: 35px;
+	margin-right: 20px;
+}
+.twt-features p{
+	position: relative;
+	top: 5px;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #fff;
+	padding-bottom: 30px;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #e6ecf0;
+    background-color: #fff;
+}
+ul{
+	background: #fff;
+    display: flex;
+	color: #aab8c2;
+}
+li{
+    display: inline-block;
+	padding-left: 18px; 
+	font-size: 12px;
+}
+
+footer a{
+	color: #aab8c2;
+	text-decoration: none;
+}
+
+.error-li {
+	margin:25px 0px;
+}
+
+.span-fp-error{
+	overflow: hidden;
+	padding: 5px;
+	border: 1px dashed #d89797;
+	border-radius: 3px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #a75858;
+}
+
+@media (max-width:800px){
+
+	.twt-main{
+		display: grid;
+		min-height: 600px;
+	}
+	.twt-features{
+		width: auto;
+		height: 40vh;
+		background-size: 180%
+	}
+	.features-div{
+		margin-top: 50px;
+	}
+	.twt-login{
+		width: auto;
+		height: 60vh;
+	}
+	/* .twt-login form{
+		display: none;
+	} */
+	footer ul{
+		display: none;
+		text-align: center;
+	}
+	.login-bird{
+		display: inline-block;
+	}
+
+	.login-box {
+		margin-left: 0;
+		grid-template-rows: 1fr 1fr;
+	    grid-template-columns: 1fr 1fr;
+	}
+	.login-btn {
+		border-radius: 100px;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 20px;
+		padding: 6px 16px;
+		margin-bottom: 16px;
+		margin-top: 10px;
+		width:200px;
+	
+	}
+
+}
+
+.con {
+	width: 200%;
+	text-align: center;
+}
+button:focus {
+    outline: none !important;
+}
