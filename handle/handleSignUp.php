@@ -29,6 +29,8 @@ if (isset($_POST['signup'])) {
     $errors = $v->errors;
     
     if ($errors == []){
+        $username = str_replace(' ', '', $username);
+        
         if(User::checkEmail($email) === true) {
             $_SESSION['errors_signup'] = ['This email is already use'];
             header('location: ../index.php')  ;
