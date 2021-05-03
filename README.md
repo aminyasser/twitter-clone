@@ -1,6 +1,7 @@
-# Twitter-Clone
-Twitter Clone using PHP In OOP style,MYSQL,AJAX,Jquery. 
-for less talking Check out the deployed website  [Click Here](https://twtr-clone.000webhostapp.com/)
+# <img align="left" alt="Twitter" width="30px" src="https://image.flaticon.com/icons/svg/2111/2111703.svg" draggable="false" /> Twitter Clone  ([Click to try 🚀](https://twtr-clone.000webhostapp.com/))
+
+Bulit PHP **_Twitter Clone_** IN OOP style and using MYSQL Database. AJAX and Jquery for requests without realoding like Follow/unfollow, like, Search users, Show popups like comment , User lists, etc.
+
 
 ## Features
 
@@ -21,7 +22,7 @@ for less talking Check out the deployed website  [Click Here](https://twtr-clone
  Make New Database with name "twitter" then import twitter.sql file in it.
  then the project is ready to run in localhost!
 
-## UI
+## 📷 UI
 
 
 ### Index
