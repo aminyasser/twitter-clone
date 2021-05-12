@@ -9,7 +9,7 @@ require_once 'Str.php';
 require_once 'Required.php';
 require_once 'Email.php';
 require_once 'Image.php';
-require_once 'Requireimage.php';
+require_once 'RequireImage.php';
 require_once 'Max100.php';
 
 

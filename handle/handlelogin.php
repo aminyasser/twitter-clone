@@ -1,6 +1,6 @@
 <?php 
 include '../core/init.php';
-require_once '../core/classes/vaildation/Validator.php';
+require_once '../core/classes/validation/Validator.php';
 use validation\Validator;
 
 
