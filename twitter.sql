@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2021 at 02:54 AM
+-- Generation Time: May 12, 2021 at 06:24 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -40,7 +40,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `comment`, `user_id`, `post_id`, `time`) VALUES
-(44, 'great work', 25, 574, '2021-05-01 02:21:10');
+(44, 'great work', 25, 574, '2021-05-01 02:21:10'),
+(45, 'sasa', 2, 712, '2021-05-01 05:31:56');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,11 @@ INSERT INTO `follow` (`id`, `follower_id`, `following_id`, `time`) VALUES
 (99, 43, 2, '2021-04-29 06:32:50'),
 (100, 44, 2, '2021-04-29 18:17:25'),
 (101, 2, 25, '2021-04-30 02:16:24'),
-(102, 25, 2, '2021-04-30 22:56:21');
+(102, 25, 2, '2021-04-30 22:56:21'),
+(120, 54, 2, '2021-05-01 06:57:13'),
+(121, 55, 2, '2021-05-12 16:18:45'),
+(126, 56, 2, '2021-05-12 16:35:31'),
+(128, 57, 2, '2021-05-12 18:23:30');
 
 -- --------------------------------------------------------
 
@@ -96,7 +101,8 @@ INSERT INTO `likes` (`id`, `user_id`, `post_id`) VALUES
 (211, 2, 573),
 (214, 2, 574),
 (224, 25, 635),
-(225, 25, 712);
+(225, 25, 712),
+(227, 2, 711);
 
 -- --------------------------------------------------------
 
@@ -129,8 +135,13 @@ INSERT INTO `notifications` (`id`, `notify_for`, `notify_from`, `target`, `type`
 (38, 25, 2, 0, 'follow', '2021-04-30 02:16:24', 1, 0),
 (39, 2, 25, 0, 'follow', '2021-04-30 22:56:20', 1, 0),
 (53, 2, 25, 574, 'comment', '2021-05-01 02:21:10', 1, 0),
-(54, 25, 2, 574, 'reply', '2021-05-01 02:21:51', 0, 0),
-(55, 2, 42, 725, 'mention', '2021-05-01 02:25:37', 1, 0);
+(54, 25, 2, 574, 'reply', '2021-05-01 02:21:51', 1, 0),
+(55, 2, 42, 725, 'mention', '2021-05-01 02:25:37', 1, 0),
+(58, 25, 2, 711, 'like', '2021-05-01 04:32:36', 1, 0),
+(67, 2, 54, 0, 'follow', '2021-05-01 06:57:13', 1, 0),
+(68, 2, 55, 0, 'follow', '2021-05-12 16:18:46', 1, 0),
+(73, 2, 56, 0, 'follow', '2021-05-12 16:35:31', 1, 0),
+(75, 2, 57, 0, 'follow', '2021-05-12 18:23:30', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -260,8 +271,6 @@ CREATE TABLE `users` (
   `name` varchar(40) COLLATE utf16_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT 'default.jpg',
   `imgCover` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT 'cover.png',
-  `following` int(11) NOT NULL,
-  `followers` int(11) NOT NULL,
   `bio` varchar(140) COLLATE utf16_unicode_ci NOT NULL,
   `location` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
   `website` varchar(255) COLLATE utf16_unicode_ci NOT NULL
@@ -271,19 +280,23 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `img`, `imgCover`, `following`, `followers`, `bio`, `location`, `website`) VALUES
-(2, 'amin', 'amin@twitter.com', '8e4e9b7ac6fc0df9e06f57f1c366cf8a', 'Amin.', 'user-608b4b4187b5c.JPG', 'user-607ef530bdeab.jpg', 0, 0, 'Undergraduate Software Engineer.', 'Alexandria,Egypt', 'https://github.com/aminyasser'),
-(5, 'bodatolba', 'tolba@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Tolba', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(25, '7oda', '7oda@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', '7oda', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(27, 'hasona', 'hasona@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'hassan', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(33, '7odawael', 'wael@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Mahmoud', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(34, 'haidy', 'haidy@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'haidy', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(37, 'aminn', 'amin1@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(40, 'mohanadyasser', 'mohanad@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Mohanad', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(41, 'khaled0', 'khaled@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Khalid', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(42, 'ahmed0', 'ahmed@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Ahmed', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(43, 'samy', 'samy@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Samy', 'default.jpg', 'cover.png', 0, 0, '', '', ''),
-(44, 'remo', 'remo@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Ramez', 'default.jpg', 'cover.png', 0, 0, '', '', '');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `img`, `imgCover`, `bio`, `location`, `website`) VALUES
+(2, 'amin', 'amin@twitter.com', '8e4e9b7ac6fc0df9e06f57f1c366cf8a', 'Amin.', 'user-608b4b4187b5c.JPG', 'user-607ef530bdeab.jpg', 'Undergraduate Software Engineer.', 'Alexandria,Egypt', 'https://github.com/aminyasser'),
+(5, 'bodatolba', 'tolba@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Tolba', 'default.jpg', 'cover.png', '', '', ''),
+(25, '7oda', '7oda@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', '7oda', 'default.jpg', 'cover.png', '', '', ''),
+(27, 'hasona', 'hasona@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'hassan', 'default.jpg', 'cover.png', '', '', ''),
+(33, '7odawael', 'wael@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Mahmoud', 'default.jpg', 'cover.png', '', '', ''),
+(34, 'haidy', 'haidy@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'haidy', 'default.jpg', 'cover.png', '', '', ''),
+(37, 'aminn', 'amin1@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', ''),
+(40, 'mohanadyasser', 'mohanad@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Mohanad', 'default.jpg', 'cover.png', '', '', ''),
+(41, 'khaled0', 'khaled@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Khalid', 'default.jpg', 'cover.png', '', '', ''),
+(42, 'ahmed0', 'ahmed@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Ahmed', 'default.jpg', 'user-609be2968c0b9.png', '', '', ''),
+(43, 'samy', 'samy@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Samy', 'default.jpg', 'cover.png', '', '', ''),
+(44, 'remo', 'remo@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Ramez', 'default.jpg', 'cover.png', '', '', ''),
+(54, 'aminyasser', 'amino@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', ''),
+(55, 'sasaa', 'aminsss@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'user-609be3deec8e5.jpg', 'cover.png', '', '', ''),
+(56, 'nbnbkj', 'nn@twittt.com', 'e10adc3949ba59abbe56e057f20f883e', 'Markting', 'default.jpg', 'cover.png', '', '', ''),
+(57, 'sas', 'amin@ydar.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -371,25 +384,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `follow`
 --
 ALTER TABLE `follow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
 
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -413,7 +426,7 @@ ALTER TABLE `trends`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- Constraints for dumped tables
