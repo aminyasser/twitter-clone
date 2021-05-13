@@ -28,7 +28,7 @@ $(document).on('click','.follow-btn', function(e){
 
      });
     } else {
-        $.post('http://localhost/twitter/core/ajax/follow.php', {unfollow:follow_id}, function(data){
+        $.post('core/ajax/follow.php', {unfollow:follow_id}, function(data){
             $button.addClass('follow');
             $button.removeClass('following');
             $button.text("Follow");

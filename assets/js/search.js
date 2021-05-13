@@ -3,7 +3,7 @@ $(function(){
     // the function pass the post var without form to search.php
 	$('.search-input').keyup(function(){
 		var search = $(this).val();
-		$.post('http://localhost/twitter/core/ajax/search.php', {search:search}, function(data){
+		$.post('core/ajax/search.php', {search:search}, function(data){
 			$('.search-result').html(data);
 			if(search == ""){
 				$('.search-result').html("");

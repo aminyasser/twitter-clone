@@ -11,7 +11,7 @@ $(function(){
 			
 	   	console.log(tweet_id);
            console.log(user_id);
-			$.post('http://localhost/twitter/core/ajax/comment.php', {showPopup:tweet_id,user_id:user_id}, function(data){
+			$.post('core/ajax/comment.php', {showPopup:tweet_id,user_id:user_id}, function(data){
 				$('.popupComment').html(data);
 				 
 				$('.close-retweet-popup').click(function(){

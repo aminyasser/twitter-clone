@@ -19,7 +19,7 @@ $(function(){
 
          $.ajax({
             type: "POST",
-            url: "http://localhost/twitter/core/ajax/like.php",
+            url: "core/ajax/like.php",
             data: {like:tweet_id, user_id:user_id},
             cache: false,
             success: function(data){
@@ -66,7 +66,7 @@ $(function(){
         // }); 
         $.ajax({
             type: "POST",
-            url: "http://localhost/twitter/core/ajax/like.php",
+            url: "core/ajax/like.php",
             data: {unlike:tweet_id, user_id:user_id},
             cache: false,
             success: function(data){
