@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2021 at 06:24 PM
+-- Generation Time: May 13, 2021 at 03:16 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -77,7 +77,8 @@ INSERT INTO `follow` (`id`, `follower_id`, `following_id`, `time`) VALUES
 (120, 54, 2, '2021-05-01 06:57:13'),
 (121, 55, 2, '2021-05-12 16:18:45'),
 (126, 56, 2, '2021-05-12 16:35:31'),
-(128, 57, 2, '2021-05-12 18:23:30');
+(128, 57, 2, '2021-05-12 18:23:30'),
+(129, 58, 2, '2021-05-13 14:52:58');
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,8 @@ INSERT INTO `notifications` (`id`, `notify_for`, `notify_from`, `target`, `type`
 (67, 2, 54, 0, 'follow', '2021-05-01 06:57:13', 1, 0),
 (68, 2, 55, 0, 'follow', '2021-05-12 16:18:46', 1, 0),
 (73, 2, 56, 0, 'follow', '2021-05-12 16:35:31', 1, 0),
-(75, 2, 57, 0, 'follow', '2021-05-12 18:23:30', 0, 0);
+(75, 2, 57, 0, 'follow', '2021-05-12 18:23:30', 1, 0),
+(76, 2, 58, 0, 'follow', '2021-05-13 14:52:58', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -271,9 +273,9 @@ CREATE TABLE `users` (
   `name` varchar(40) COLLATE utf16_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT 'default.jpg',
   `imgCover` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT 'cover.png',
-  `bio` varchar(140) COLLATE utf16_unicode_ci NOT NULL,
-  `location` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
-  `website` varchar(255) COLLATE utf16_unicode_ci NOT NULL
+  `bio` varchar(140) COLLATE utf16_unicode_ci NOT NULL DEFAULT '',
+  `location` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT '',
+  `website` varchar(255) COLLATE utf16_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci;
 
 --
@@ -296,7 +298,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `img`, `imgC
 (54, 'aminyasser', 'amino@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', ''),
 (55, 'sasaa', 'aminsss@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'user-609be3deec8e5.jpg', 'cover.png', '', '', ''),
 (56, 'nbnbkj', 'nn@twittt.com', 'e10adc3949ba59abbe56e057f20f883e', 'Markting', 'default.jpg', 'cover.png', '', '', ''),
-(57, 'sas', 'amin@ydar.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', '');
+(57, 'sas', 'amin@ydar.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin Yasser', 'default.jpg', 'cover.png', '', '', ''),
+(58, '201', 'amin111@twitter.com', 'e10adc3949ba59abbe56e057f20f883e', 'Amin1', 'default.jpg', 'cover.png', 'Hey', '', '');
 
 --
 -- Indexes for dumped tables
@@ -390,7 +393,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `follow`
 --
 ALTER TABLE `follow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `likes`
@@ -402,7 +405,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -426,7 +429,7 @@ ALTER TABLE `trends`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- Constraints for dumped tables
