@@ -605,6 +605,9 @@
 	/* overflow-y: scroll; */
 	display: block;
 }
+#mine .retweeted {
+	color: rgb(22, 207, 22);
+}
 
 .retweet-popup-body-wrap{
 	width: 580px;
