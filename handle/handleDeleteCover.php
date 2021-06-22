@@ -10,6 +10,8 @@ $username =  User::getUserNameById($_SESSION['user_id']);
 $user =User::getData($_SESSION['user_id']);
 
 $currentCover = $user->imgCover;
+
+if ($currentCover !== 'cover.png')
 unlink('../assets/images/users/' . $currentCover);
 
 
