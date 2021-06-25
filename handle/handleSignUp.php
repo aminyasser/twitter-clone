@@ -37,7 +37,7 @@ if (isset($_POST['signup'])) {
         } else if (User::checkUserName($username) === true) {
             $_SESSION['errors_signup'] = ['This username is already use'];
             header('location: ../index.php')  ;
-        } else if (!preg_match("[^a-zA-Z0-9\!]" , $username)) {
+        } else if (!preg_match("/^[a-zA-Z0-9_]*$/" , $username)) {
             $_SESSION['errors_signup'] = ['Only Chars and Numbers allowed in username'];
             header('location: ../index.php')  ;
         } else {
