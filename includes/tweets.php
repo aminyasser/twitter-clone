@@ -148,7 +148,7 @@ else  $comment_count = Tweet::countComments($tweet->id);
         </a>
         <?php if ($retweet_sign) { ?>
         <span class="retweed-name"> <i class="fa fa-retweet retweet-name-i" aria-hidden="true"></i> 
-        <a style="position: relative; z-index:100; color:rgb(102, 117, 130);" href="<?php echo $retweeted_user->name; ?> "> <?php  if($retweeted_user->id == $user_id) echo "You";
+        <a style="position: relative; z-index:100; color:rgb(102, 117, 130);" href="<?php echo $retweeted_user->username; ?> "> <?php  if($retweeted_user->id == $user_id) echo "You";
         else echo $retweeted_user->name; ?> </a>  retweeted</span>
         <?php } ?>
         <div class="grid-tweet">
