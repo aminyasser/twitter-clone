@@ -19,9 +19,9 @@ Bulit PHP **_Twitter Clone_** IN OOP style and using MYSQL Database. AJAX and Jq
 
 ## Running locally
  
- Create New Database then import twitter.sql file on it.
- go to PATH core/classes/connection.php and change database info.
- 
+ - Create New Database then import twitter.sql file on it.
+ - go to PATH **core/classes/connection.php** and add your database info.
+
  ```php
     protected static $servername = "localhost";
     protected static $db_name="twitter";
