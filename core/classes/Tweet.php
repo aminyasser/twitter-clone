@@ -224,7 +224,7 @@ class Tweet extends User {
         public static function getTweetLinks($tweet){
             $tweet = preg_replace("/(https?:\/\/)([\w]+.)([\w\.]+)/", "<a href='$0' target='_blink'>$0</a>", $tweet);
             $tweet = preg_replace("/#([\w]+)/", "<a class='hash-tweet' href='#'>$0</a>", $tweet);		
-            $tweet = preg_replace("/@([\w]+)/", "<a class='hash-tweet' href='http://localhost/twitter/$1'>$0</a>", $tweet);
+            $tweet = preg_replace("/@([\w]+)/", "<a class='hash-tweet' href=' ".BASE_URL."$1'>$0</a>", $tweet);
             return $tweet;		
         }
         public static function hashtagAndMentionTweet($tweet){
