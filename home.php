@@ -246,7 +246,7 @@
 
                               <i class="fa fa-image item1-pair"></i>
                             </label>
-                            <input class="tweet_img" id="tweet_img" type="file" name="tweet_img">    
+                            <input class="tweet_img" id="tweet_img" type="file" name="tweet_img" type="file" accept="image/*">    
                                 
                           </div>
                           <div class="hash-box">
