@@ -224,7 +224,7 @@
                                  color:white;
                                  font-size:18px " class="far fa-images position-absolute"></i> 
                                   </label>
-                                  <input id="cover-input" type="file" name="cover"/>
+                                  <input id="cover-input" type="file" accept="image/*" name="cover"/>
                                   <a href="handle/handleDeleteCover.php" style="top: 80px;
                                  left:260px;
                                  color:red;
@@ -244,7 +244,7 @@
                                  font-size:18px;
                                  z-index:20 " class="far fa-images position-absolute"></i> 
                                   </label>
-                                <input id="file-input" name="image" type="file"/>
+                                <input id="file-input" name="image" type="file" accept="image/*"/>
                             </div>
 
 
