@@ -81,13 +81,13 @@
 	border: 0px solid #000000;
 	cursor: pointer;
 	margin-left: 5px;
-	background: #1da1f2;
+	ackground: red;
 	font-weight: 900;
 	transition: 0.3s;
   }
   #mine .button-twittear:hover {
 	transition: 0.3s;
-	background-color: #2290d4;
+	ackground-color: red;
   }
   
   #mine .box-user {
